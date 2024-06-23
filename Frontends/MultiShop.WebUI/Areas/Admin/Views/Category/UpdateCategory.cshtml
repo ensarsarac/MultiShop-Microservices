@@ -1,0 +1,34 @@
+﻿@model UpdateCategoryDto
+@{
+    ViewData["Title"] = "UpdateCategory";
+    ViewData["MenuTitle"] = "Kategori Güncelleme Sayfası";
+    ViewData["v1"] = "Ana Sayfa";
+    ViewData["v2"] = "Kategoriler";
+    ViewData["v3"] = "Kategori Güncelle";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="chart-box">
+            <h4>Kategori Güncelle</h4>
+            <p>Kategori ile ilgili güncelleme işlemini panel üzerinden gerçekleştirebilirsiniz.</p>
+            <hr />
+            <div class="bs-example" data-example-id="bordered-table">
+                <form method="post">
+                    <input type="hidden" asp-for="@Model.CategoryID" />
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Kategori Adı</label>
+                        <input type="text" asp-for="@Model.CategoryName" class="form-control" id="exampleInputEmail1" placeholder="Kategori Adı">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Kategori Resim Url</label>
+                        <input type="text" asp-for="@Model.CategoryImage" class="form-control" id="exampleInputEmail1" placeholder="Kategori Resim Url">
+                    </div>
+                    <button type="submit" class="btn btn-default">Güncelle</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,17 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+@await Component.InvokeAsync("_UILayoutHeadComponent")
+<body>
+    @await Component.InvokeAsync("_UILayoutTopBarComponent")
+    @await Component.InvokeAsync("_UILayoutNavbarComponent")
+    @RenderBody()
+    @await Component.InvokeAsync("_UILayoutFooterComponent")
+    <!-- Footer End -->
+    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+    @await Component.InvokeAsync("_UILayoutScriptsComponent")
+</body>
+</html>

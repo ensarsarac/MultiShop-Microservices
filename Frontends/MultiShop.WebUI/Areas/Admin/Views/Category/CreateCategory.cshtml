@@ -1,0 +1,32 @@
+﻿@model CreateCategoryDto
+@{
+    ViewData["Title"] = "CreateCategory";
+    ViewData["MenuTitle"] = "Kategori Ekleme Sayfası";
+    ViewData["v1"] = "Ana Sayfa";
+    ViewData["v2"] = "Kategoriler";
+    ViewData["v3"] = "Yeni Kategori Girişi";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="chart-box">
+            <h4>Kategori Listesi</h4>
+            <p>Kategori ile ilgili ekleme işlemini panel üzerinden gerçekleştirebilirsiniz.</p>
+            <hr />
+            <div class="bs-example" data-example-id="bordered-table">
+                <form method="post">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Kategori Adı</label>
+                        <input type="text" name="CategoryName" class="form-control" id="exampleInputEmail1" placeholder="Kategori Adı">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Kategori Resim Url</label>
+                        <input type="text" name="CategoryImage" class="form-control" id="exampleInputEmail1" placeholder="Kategori Resim Url">
+                    </div>
+                    <button type="submit" class="btn btn-default">Kaydet</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+﻿@model CreateContactDto
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+    <!-- Breadcrumb Start -->
+    <div class="container-fluid">
+        <div class="row px-xl-5">
+            <div class="col-12">
+                <nav class="breadcrumb bg-light mb-30">
+                    <a class="breadcrumb-item text-dark" href="#">Ana Sayfa</a>
+                    <span class="breadcrumb-item active">İletişim</span>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">BİZE YAZIN</span></h2>
+        <div class="row px-xl-5">
+            <div class="col-lg-7 mb-5">
+                <div class="contact-form bg-light p-30">
+                    <div id="success"></div>
+                    <form method="post" action="/Contact/SendMessage">
+                        <div class="control-group">
+                            <input type="text" asp-for="NameSurname" class="form-control" id="NameSurname" placeholder="Adınız Soyadınız"
+                               required="required" data-validation-required-message="Lütfen boş geçmeyin!" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="email" class="form-control" asp-for="Email" id="Email" placeholder="Mail Adresiniz"
+                               required="required" data-validation-required-message="Lütfen boş geçmeyin!" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="text" class="form-control" asp-for="Subject" id="Subject" placeholder="Konu"
+                               required="required" data-validation-required-message="Lütfen boş geçmeyin!" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <textarea class="form-control" rows="8" asp-for="Message" id="Message" placeholder="Mesaj"
+                                required="required"
+                                data-validation-required-message="Lütfen boş geçmeyin!"></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">Mesaj Gönder</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        @await Component.InvokeAsync("_ContactDetailComponent")
+            
+        </div>
+    </div>

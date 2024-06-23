@@ -1,0 +1,68 @@
+﻿@model List<ResultFeatureSliderDto>
+
+@{
+    ViewData["Title"] = "Index";
+    ViewData["MenuTitle"] = "Kategori İşlemleri";
+    ViewData["v1"] = "Öne Çıkan Görseller";
+    ViewData["v2"] = "Öne Çıkan Görseller Listesi";
+    ViewData["v3"] = "Öne Çıkan Görsel İşlemleri";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<section class="content container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="chart-box">
+                <h4>Öne Çıkan Görseller Listesi</h4>
+                <p>Öne Çıkan Görsel ile ilgili işlemleri tablo üzerinden gerçekleştirebilirsiniz.</p>
+                <div class="bs-example" data-example-id="bordered-table">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Görsel Başlığı</th>
+                                <th>Sil</th>
+                                <th>Güncelle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                count++;
+                                <tr>
+                                    <th scope="row">@count</th>
+                                    <td>@item.Title</td>
+                                    <td><button id="@item.FeatureSliderId" onclick="areyousure(this)" class="btn btn-danger btn-outline">Sil</button></td>
+                                    <td><a href="/Admin/FeatureSlider/UpdateFeatureSlider/@item.FeatureSliderId" class="btn btn-warning btn-outline">Güncelle</a></td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                    <a href="/Admin/FeatureSlider/CreateFeatureSlider" class="btn btn-primary btn-outline">Yeni Öne Çıkan Alan Girişi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function areyousure(button) {
+        var id = button.getAttribute("id");
+        Swal.fire({
+            title: "Silmek istediğinize emin misiniz?",
+            text: "Bu işlemi geri alamazsınız",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Evet, Sil!",
+            cancelButtonText: "İptal"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/Admin/FeatureSlider/DeleteFeatureSlider/" + id;
+            }
+        });
+    }
+</script>

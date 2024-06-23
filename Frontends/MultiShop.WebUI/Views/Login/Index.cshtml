@@ -1,0 +1,55 @@
+﻿@model CreateLoginDto
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>MultiShop Giriş Yap</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="~/colorlib-regform-30/css/opensans-font.css">
+	<link rel="stylesheet" type="text/css" href="~/colorlib-regform-30/fonts/line-awesome/css/line-awesome.min.css">
+	<!-- Jquery -->
+	<link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
+	<!-- Main Style Css -->
+	<link rel="stylesheet" href="~/colorlib-regform-30/css/style.css" />
+</head>
+<body class="form-v4">
+	<div class="page-content">
+		<div class="form-v4-content">
+			<div class="form-left">
+				<h2>Multishop E-Ticaret</h2>
+				<p class="text-1">MultiShop, geniş ürün yelpazesi ve güvenilir alışveriş deneyimiyle müşterilerine hizmet veren bir e-ticaret platformudur. En yeni trendlerden günlük ihtiyaçlara kadar her şeyi bulabileceğiniz MultiShop'ta alışveriş keyfini keşfedin!</p>
+				<p class="text-2">Ürün çeşitliliği ve kalitesiyle öne çıkan MultiShop, moda, elektronik, ev ve yaşam, sağlık, kozmetik gibi birçok kategoride binlerce ürünü müşterilerine sunmaktadır. Kullanıcı dostu arayüzü, güvenli ödeme seçenekleri ve hızlı kargo avantajıyla MultiShop, online alışveriş deneyiminizi en üst seviyeye çıkarmayı hedeflemektedir.</p>
+				<div class="form-left-last">
+					<a href="/Register/Index" name="account" class="account">Kayıt Ol</a>
+				</div>
+			</div>
+			<form class="form-detail" method="post">
+				<h2>MultiShop Giriş Formu</h2>
+				
+				<div class="form-row">
+					<label for="your_email">Kullanıcı Adı</label>
+					<input type="text" name="Username" id="your_email" class="input-text">
+				</div>
+				<div class="form-group">
+					<div class="form-row">
+						<label for="password">Şifre</label>
+						<input type="password" name="Password" id="password" class="input-text" required>
+					</div>
+				</div>
+				<div class="form-row-last">
+					<button type="submit" style="height:40px;" class="register">Giriş Yap</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+</body>
+</html>

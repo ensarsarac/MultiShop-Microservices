@@ -1,0 +1,19 @@
+Ocelot => 5000
+Identity => 5001
+Catalog => 7250
+Discount => 7251
+Order =>7252
+Comment =>7255
+Cargo => 7253
+Basket =>7254
+Payment =>7256
+Images =>7257
+
+DB PORT
+
+CatalogDb => (mongo db default)
+CargoDb => 1435 (sql server)
+CommentDb => 1432 (sql server)
+IdentityDb => 1433 (sql server)
+OrderDb => 1434 (sql server)
+BasketDb => 6379 (default redis port)

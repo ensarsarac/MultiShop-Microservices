@@ -1,0 +1,69 @@
+﻿@model List<ResultFeatureDto>
+@{
+    ViewData["Title"] = "Index";
+    ViewData["MenuTitle"] = "Öne Çıkan Alan İşlemleri";
+    ViewData["v1"] = "Ana Sayfa";
+    ViewData["v2"] = "Öne Çıkan Alan";
+    ViewData["v3"] = "Öne Çıkan Alan Listesi";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<section class="content container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="chart-box">
+                <h4>Öne Çıkan Alan Listesi</h4>
+                <p>Öne Çıkan Alan ile ilgili işlemleri tablo üzerinden gerçekleştirebilirsiniz.</p>
+                <div class="bs-example" data-example-id="bordered-table">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Başlık</th>
+                                <th>İkon</th>
+                                <th>Sil</th>
+                                <th>Güncelle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                count++;
+                                <tr>
+                                    <th scope="row">@count</th>
+                                    <td>@item.Title</td>
+                                    <td>@item.Icon</td>
+                                    <td><button id="@item.FeatureId" onclick="areyousure(this)" class="btn btn-danger btn-outline">Sil</button></td>
+                                    <td><a href="/Admin/Features/UpdateFeature/@item.FeatureId" class="btn btn-warning btn-outline">Güncelle</a></td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                    <a href="/Admin/Features/CreateFeature" class="btn btn-primary btn-outline">Yeni Öne Çıkan Alan Girişi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function areyousure(button) {
+        var id = button.getAttribute("id");
+        Swal.fire({
+            title: "Silmek istediğinize emin misiniz?",
+            text: "Bu işlemi geri alamazsınız",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Evet, Sil!",
+            cancelButtonText: "İptal"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/Admin/Features/DeleteFeature/" + id;
+            }
+        });
+    }
+</script>

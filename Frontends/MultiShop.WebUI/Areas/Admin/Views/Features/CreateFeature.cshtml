@@ -1,0 +1,32 @@
+﻿@model CreateFeatureDto
+@{
+    ViewData["Title"] = "CreateFeature";
+    ViewData["MenuTitle"] = "Öne Çıkan Alan İşlemleri";
+    ViewData["v1"] = "Ana Sayfa";
+    ViewData["v2"] = "Öne Çıkan Alan";
+    ViewData["v3"] = "Öne Çıkan Alan Ekle";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="chart-box">
+            <h4>Öne Çıkan Alan Listesi</h4>
+            <p>Öne Çıkan Alan ile ilgili ekleme işlemini panel üzerinden gerçekleştirebilirsiniz.</p>
+            <hr />
+            <div class="bs-example" data-example-id="bordered-table">
+                <form method="post">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Başlık</label>
+                        <input type="text" name="Title" class="form-control" id="exampleInputEmail1" placeholder="Başlık">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">İkon</label>
+                        <input type="text" name="Icon" class="form-control" id="exampleInputEmail1" placeholder="İkon">
+                    </div>
+                    <button type="submit" class="btn btn-default">Kaydet</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

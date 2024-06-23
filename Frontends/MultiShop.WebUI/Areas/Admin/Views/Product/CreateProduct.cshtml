@@ -1,0 +1,40 @@
+﻿@model CreateProductDto
+@{
+    ViewData["Title"] = "CreateProduct";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="chart-box">
+            <h4>Ürün Listesi</h4>
+            <p>Ürün ile ilgili ekleme işlemini panel üzerinden gerçekleştirebilirsiniz.</p>
+            <hr />
+            <div class="bs-example" data-example-id="bordered-table">
+                <form method="post">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Ürün Adı</label>
+                        <input type="text" name="ProductName" class="form-control" id="exampleInputEmail1" placeholder="Ürün Adı">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Ürün Fiyatı</label>
+                        <input type="text" name="ProductPrice" class="form-control" id="exampleInputEmail1" placeholder="Ürün Fiyatı">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Ürün Resmi</label>
+                        <input type="text" name="ProductImageUrl" class="form-control" id="exampleInputEmail1" placeholder="Ürün Resmi">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Ürün Kategorisi</label>
+                        @Html.DropDownListFor(x => x.CategoryID, (SelectList)ViewBag.categories, "Kategori Seçiniz", new { @class = "form-control",@style="padding:5px;" })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Ürün Açıklaması</label>
+                        <textarea type="text" name="ProductDescription" cols="4" rows="4" class="form-control" id="exampleInputEmail1" placeholder="Ürün Açıklaması"> </textarea>
+                    </div>
+                    <button type="submit" class="btn btn-default">Kaydet</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

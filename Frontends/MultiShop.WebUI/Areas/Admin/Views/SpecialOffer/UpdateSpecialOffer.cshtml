@@ -1,0 +1,38 @@
+﻿@model UpdateSpecialOfferDto
+@{
+    ViewData["Title"] = "UpdateSpecialOffer";
+    ViewData["MenuTitle"] = "Özel Teklifler İşlemleri";
+    ViewData["v1"] = "Ana Sayfa";
+    ViewData["v2"] = "Özel Teklifler";
+    ViewData["v3"] = "Özel Teklif Güncelle";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="chart-box">
+            <h4>Özel Teklif Listesi</h4>
+            <p>Özel Teklif ile ilgili güncelleme işlemini panel üzerinden gerçekleştirebilirsiniz.</p>
+            <hr />
+            <div class="bs-example" data-example-id="bordered-table">
+                <form method="post">
+                    <input type="hidden" asp-for="@Model.SpecialOfferId" />
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Özel Teklif Başlığı</label>
+                        <input type="text" asp-for="@Model.Title" class="form-control" id="exampleInputEmail1" placeholder="Özel Teklif Başlığı">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Özel Teklif Başlığı</label>
+                        <input type="text" asp-for="@Model.SubTitle" class="form-control" id="exampleInputEmail1" placeholder="Özel Teklif Alt Başlık">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Özel Teklif Resim Linki</label>
+                        <input type="text" asp-for="@Model.ImageUrl" class="form-control" id="exampleInputEmail1" placeholder="Özel Teklif Resim Linki">
+                    </div>
+
+                    <button type="submit" class="btn btn-default">Güncelle</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
