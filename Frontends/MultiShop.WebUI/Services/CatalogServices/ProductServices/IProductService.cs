@@ -11,5 +11,7 @@ namespace MultiShop.WebUI.Services.CatalogServices.ProductServices
         Task DeleteProductAsync(string id);
         Task<GetByIdProductDto> GetByIdProductAsync(string id);
         Task<ResultProductWithCategoryDto> GetByIdProductWithCategoryAsync(string id);
+        Task<List<ResultProductDto>> GetAllProductOrderByIdAsync();
+        Task<List<ResultProductDto>> GetAllProductByCategoryId(string id);
     }
 }

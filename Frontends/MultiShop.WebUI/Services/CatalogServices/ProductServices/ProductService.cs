@@ -30,6 +30,22 @@ namespace MultiShop.WebUI.Services.CatalogServices.ProductServices
             return result;
         }
 
+        public async Task<List<ResultProductDto>> GetAllProductByCategoryId(string id)
+        {
+            var responseMessage = await _httpClient.GetAsync("products/ProductListByCategoryId/"+id);
+            var readData = await responseMessage.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<List<ResultProductDto>>(readData);
+            return result;
+        }
+
+        public async Task<List<ResultProductDto>> GetAllProductOrderByIdAsync()
+        {
+            var responseMessage = await _httpClient.GetAsync("products/ProductAllListByOrderId");
+            var readData = await responseMessage.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<List<ResultProductDto>>(readData);
+            return result;
+        }
+
         public async Task<List<ResultProductWithCategoryDto>> GetAllProductWithCategoryAsync()
         {
             var responseMessage = await _httpClient.GetAsync("products/ProductListWithCategory");
@@ -47,7 +63,10 @@ namespace MultiShop.WebUI.Services.CatalogServices.ProductServices
 
         public async Task<ResultProductWithCategoryDto> GetByIdProductWithCategoryAsync(string id)
         {
-            return null;
+            var responseMessage = await _httpClient.GetAsync("products/GetProductByIdWithCategory/"+id);
+            var readData = await responseMessage.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<ResultProductWithCategoryDto>(readData);
+            return result;
         }
 
         public async Task UpdateProductAsync(UpdateProductDto updateProductDto)

@@ -1,36 +1,23 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MultiShop.DtoLayer.CatalogDtos.ProductDescriptionDtos;
+using MultiShop.WebUI.Services.CatalogServices.ProductDetailService;
 using Newtonsoft.Json;
 
 namespace MultiShop.WebUI.ViewComponents.ProductDetailViewComponents
 {
     public class _ProductDetailDescriptionComponent:ViewComponent
     {
-        private readonly IHttpClientFactory _httpClientFactory;
+        private readonly IProductDetailService _productDetailService;
 
-        public _ProductDetailDescriptionComponent(IHttpClientFactory httpClientFactory)
+        public _ProductDetailDescriptionComponent( IProductDetailService productDetailService)
         {
-            _httpClientFactory = httpClientFactory;
+            _productDetailService = productDetailService;
         }
 
         public async Task<IViewComponentResult> InvokeAsync(string productId)
         {
-            var client = _httpClientFactory.CreateClient();
-            var res = await client.GetAsync("https://localhost:7250/api/ProductDetails/ProductDetailByProductId/"+productId);
-            if (res.IsSuccessStatusCode)
-            {
-                var read = await res.Content.ReadAsStringAsync();
-                var jsonData = JsonConvert.DeserializeObject<ResultProductDetailDto>(read);
-                return View(jsonData);
-            }
-            else
-            {
-                var result = new ResultProductDetailDto();
-                result.ProductDescription = "Bu ürün hakkında henüz açıklama girilmedi";
-                result.ProductInfo = "Bu ürün hakkında henüz bilgi girilmedi";
-                result.ProductID = productId;
-                return View(result);
-            }
+            
+            return View(await _productDetailService.GetByIdProductDetailByProductIdAsync(productId));
 
         }
     }

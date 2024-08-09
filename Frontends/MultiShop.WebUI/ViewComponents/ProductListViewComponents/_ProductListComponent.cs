@@ -1,39 +1,27 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MultiShop.DtoLayer.CatalogDtos.ProductDtos;
+using MultiShop.WebUI.Services.CatalogServices.ProductServices;
 using Newtonsoft.Json;
 
 namespace MultiShop.WebUI.ViewComponents.ProductListViewComponents
 {
     public class _ProductListComponent:ViewComponent
     {
-        private readonly IHttpClientFactory _httpClientFactory;
+        private readonly IProductService _productService;
 
-        public _ProductListComponent(IHttpClientFactory httpClientFactory)
+        public _ProductListComponent(IProductService productService)
         {
-            _httpClientFactory = httpClientFactory;
+            _productService = productService;
         }
         public async Task<IViewComponentResult> InvokeAsync(string? id)
         {
-            var client = _httpClientFactory.CreateClient();
             if (id != null)
             {
-                var resMessage = await client.GetAsync("https://localhost:7250/api/Products/ProductListByCategoryId/" + id);
-                if (resMessage.IsSuccessStatusCode)
-                {
-                    var readData = await resMessage.Content.ReadAsStringAsync();
-                    var values = JsonConvert.DeserializeObject<List<ResultProductDto>>(readData);
-                    return View(values);
-                }
+                return View(await _productService.GetAllProductByCategoryId(id));
             }
             else
             {
-                var resMessage = await client.GetAsync("https://localhost:7250/api/Products/ProductAllListByOrderId");
-                if (resMessage.IsSuccessStatusCode)
-                {
-                    var readData = await resMessage.Content.ReadAsStringAsync();
-                    var values = JsonConvert.DeserializeObject<List<ResultProductDto>>(readData);
-                    return View(values);
-                }
+                return View(await _productService.GetAllProductOrderByIdAsync());
             }
             return View();
         }
