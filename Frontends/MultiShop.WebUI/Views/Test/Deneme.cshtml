@@ -1,0 +1,13 @@
+﻿@model List<ResultCategoryDto>
+@{
+    ViewData["Title"] = "Deneme";
+}
+
+<br /><br />
+<div class="ms-5">
+     @foreach (var item in Model)
+    {
+        <p>@item.CategoryName</p>
+    }
+</div>
+

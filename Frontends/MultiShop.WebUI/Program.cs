@@ -29,7 +29,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     opt.Cookie.Name = "MultiShopCookie";
     opt.SlidingExpiration = true;
 });
-
+builder.Services.AddAccessTokenManagement();
 builder.Services.AddHttpClient<IIdentityService, IdentityService>();
 
 builder.Services.AddScoped<ILoginService, LoginService>();
@@ -43,6 +43,8 @@ builder.Services.Configure<ServiceApiSettings>(builder.Configuration.GetSection(
 
 builder.Services.AddScoped<ResourceOwnerPasswordTokenHandler>();
 
+builder.Services.AddScoped<ClientCredentialsTokenHandler>();
+builder.Services.AddHttpClient<IClientCredentialsTokenService, ClientCredentialsTokenService>();
 
 var values = builder.Configuration.GetSection("ServiceApiSettings").Get<ServiceApiSettings>();
 builder.Services.AddHttpClient<IUserService, UserService>(opt =>
@@ -52,8 +54,10 @@ builder.Services.AddHttpClient<IUserService, UserService>(opt =>
 
 builder.Services.AddHttpClient<ICategoryService, CategoryService>(opt =>
 {
-    opt.BaseAddress = new Uri($"{values.OcelotUrl}/{values.CatalogUrl.Path}");
-});
+    opt.BaseAddress = new Uri($"{values.OcelotUrl}/{values.CatalogUrl.Path}/");
+}).AddHttpMessageHandler<ClientCredentialsTokenHandler>();
+
+builder.Services.AddAccessTokenManagement();
 
 var app = builder.Build();
 
