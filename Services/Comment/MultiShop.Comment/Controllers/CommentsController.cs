@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MultiShop.Comment.Context;
 using MultiShop.Comment.Dtos;
@@ -6,6 +7,7 @@ using MultiShop.Comment.Entities;
 
 namespace MultiShop.Comment.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CommentsController : ControllerBase
@@ -23,24 +25,6 @@ namespace MultiShop.Comment.Controllers
             var values = _context.UserComments.ToList();
             return Ok(values);
         }
-        //[HttpGet]
-        //public IActionResult CommentListWithProductName()
-        //{
-        //    var values = _context.UserComments.ToList();
-        //    var result = values.Select(x => new ResultCommentWithProductName()
-        //    {
-        //        CommentDetail = x.CommentDetail,
-        //        CreatedDate = x.CreatedDate,
-        //        Email = x.Email,
-        //        ImageUrl = x.ImageUrl,
-        //        NameSurname = x.NameSurname,
-        //        ProductId = x.ProductId,
-        //        Rating = x.Rating,
-        //        Status = x.Status,
-        //        UserCommentId = x.UserCommentId,
-        //    }).ToList();
-        //    return Ok(values);
-        //}
         [HttpGet("CommentListByProductId/{id}")]
         public IActionResult CommentListByProductId(string id)
         {

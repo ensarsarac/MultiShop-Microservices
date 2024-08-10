@@ -36,7 +36,7 @@ namespace MultiShop.WebUI.Controllers
             createCommentDto.ProductId = TempData["id"].ToString();
             createCommentDto.Rating = 5;
             createCommentDto.ImageUrl = string.Empty;
-            await _commentService.CreateComment(createCommentDto);
+            await _commentService.CreateCommentAsync(createCommentDto);
             return RedirectToAction("Index","Default");
         }
     }

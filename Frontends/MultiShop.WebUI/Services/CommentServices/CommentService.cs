@@ -13,9 +13,14 @@ namespace MultiShop.WebUI.Services.CommentServices
             _httpClient = httpClient;
         }
 
-        public async Task CreateComment(CreateCommentDto createCommentDto)
+        public async Task CreateCommentAsync(CreateCommentDto createCommentDto)
         {
             await _httpClient.PostAsJsonAsync<CreateCommentDto>("comments", createCommentDto);
+        }
+
+        public async Task DeleteCommentAsync(int id)
+        {
+            await _httpClient.DeleteAsync("comments?id=" + id);
         }
 
         public async Task<List<ResultCommentDto>> GetCommentListByProductId(string id)
@@ -24,6 +29,11 @@ namespace MultiShop.WebUI.Services.CommentServices
             var readData = await responseMessage.Content.ReadAsStringAsync();
             var result = JsonConvert.DeserializeObject<List<ResultCommentDto>>(readData);
             return result;
+        }
+
+        public async Task UpdateCommentAsync(UpdateCommentDto updateCommentDto)
+        {
+            await _httpClient.PutAsJsonAsync<UpdateCommentDto>("comments", updateCommentDto);
         }
     }
 }

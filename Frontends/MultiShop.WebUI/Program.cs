@@ -4,6 +4,7 @@ using MultiShop.WebUI.Handlers;
 using MultiShop.WebUI.Services.CatalogServices.AboutServices;
 using MultiShop.WebUI.Services.CatalogServices.BrandServices;
 using MultiShop.WebUI.Services.CatalogServices.CategoryServices;
+using MultiShop.WebUI.Services.CatalogServices.ContactServices;
 using MultiShop.WebUI.Services.CatalogServices.FeatureServices;
 using MultiShop.WebUI.Services.CatalogServices.OfferDiscountServices;
 using MultiShop.WebUI.Services.CatalogServices.ProductDetailService;
@@ -117,6 +118,11 @@ builder.Services.AddHttpClient<IProductImageService, ProductImageService>(opt =>
     opt.BaseAddress = new Uri($"{values.OcelotUrl}/{values.CatalogUrl.Path}/");
 }).AddHttpMessageHandler<ClientCredentialsTokenHandler>();
 
+builder.Services.AddHttpClient<IContactService, ContactService>(opt =>
+{
+    opt.BaseAddress = new Uri($"{values.OcelotUrl}/{values.CatalogUrl.Path}/");
+}).AddHttpMessageHandler<ClientCredentialsTokenHandler>();
+
 builder.Services.AddAccessTokenManagement();
 
 var app = builder.Build();
@@ -144,6 +150,6 @@ app.UseEndpoints(endpoints =>
 });
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Default}/{action=Index}/{id?}");
 
 app.Run();
