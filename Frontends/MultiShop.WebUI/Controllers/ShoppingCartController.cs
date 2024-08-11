@@ -2,6 +2,7 @@
 using MultiShop.DtoLayer.BasketDtos;
 using MultiShop.WebUI.Services.BasketService;
 using MultiShop.WebUI.Services.CatalogServices.ProductServices;
+using MultiShop.WebUI.Services.DiscountServices;
 
 namespace MultiShop.WebUI.Controllers
 {
@@ -9,16 +10,44 @@ namespace MultiShop.WebUI.Controllers
     {
         private readonly IProductService _productService;
         private readonly IBasketService _basketService;
+        private readonly IDiscountService _discountService;
 
-        public ShoppingCartController(IProductService productService, IBasketService basketService)
+        public ShoppingCartController(IProductService productService, IBasketService basketService, IDiscountService discountService)
         {
             _productService = productService;
             _basketService = basketService;
+            _discountService = discountService;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string? code)
         {
-            var values = _basketService.GetBasket();
+            var values =await _basketService.GetBasket();
+            ViewBag.totalPrice = values.TotalPrice;
+            if(code is null)
+            {
+                var totalPriceWithTax = values.TotalPrice + values.TotalPrice / 100 * 10;
+                var tax = values.TotalPrice / 100 * 10;
+                ViewBag.tax = tax;
+                ViewBag.totalPriceWithTax = totalPriceWithTax;
+            }
+            else
+            {
+                var codeControl = await _discountService.GetDiscountCode(code);
+                if(codeControl.Code is null)
+                {
+                    ViewBag.NotFoundCoupon = "Böyle bir kupon bulunamadı";
+                }
+                else
+                {
+                    var tax = values.TotalPrice / 100 * 10;
+                    var rate = values.TotalPrice / 100 * codeControl.Rate;
+                    var totalPriceWithTax = values.TotalPrice + tax - rate;
+                    ViewBag.tax = tax;
+                    ViewBag.totalPriceWithTax = totalPriceWithTax;
+                    ViewBag.CouponMessage = $"{code} kupon uygulandı";
+                }
+            }
+            
             return View(values);
         }
 

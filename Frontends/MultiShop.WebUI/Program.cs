@@ -133,7 +133,7 @@ builder.Services.AddHttpClient<IBasketService, BasketService>(opt =>
 builder.Services.AddHttpClient<IDiscountService, DiscountService>(opt =>
 {
     opt.BaseAddress = new Uri($"{values.OcelotUrl}/{values.DiscountUrl.Path}/");
-}).AddHttpMessageHandler<ClientCredentialsTokenHandler>();
+}).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
 
 builder.Services.AddAccessTokenManagement();
 
