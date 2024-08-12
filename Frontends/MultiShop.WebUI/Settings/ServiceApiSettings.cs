@@ -12,6 +12,7 @@
         public ServiceApi BasketUrl { get; set; }
         public ServiceApi PaymentUrl { get; set; }
         public ServiceApi CommentUrl { get; set; }
+        public ServiceApi MessageUrl { get; set; }
     }
     public class ServiceApi
     {
