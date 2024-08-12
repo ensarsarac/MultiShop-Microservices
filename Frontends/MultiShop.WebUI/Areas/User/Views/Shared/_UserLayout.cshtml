@@ -1,0 +1,33 @@
+﻿@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+@await Component.InvokeAsync("_UserLayoutHeadComponent")
+<body>
+	<div class="container-scroller d-flex">
+		@await Component.InvokeAsync("_UserLayoutSideBarComponent")
+		<div class="container-fluid page-body-wrapper">
+			@await Component.InvokeAsync("_UserLayoutNavbarComponent")
+			<div class="main-panel">
+				<div class="content-wrapper">
+					<div class="row">
+
+						<div class="col-12 col-xl-6 grid-margin stretch-card">
+							<div class="row w-100 flex-grow">
+								@RenderBody()
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+				@await Component.InvokeAsync("_UserLayoutFooterComponent")
+			</div>
+		</div>
+	</div>
+	@await Component.InvokeAsync("_UserLayoutScriptComponent")
+</body>
+</html>
