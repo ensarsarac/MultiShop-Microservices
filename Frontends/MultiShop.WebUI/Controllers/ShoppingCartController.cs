@@ -36,12 +36,17 @@ namespace MultiShop.WebUI.Controllers
                 if(codeControl.Code is null)
                 {
                     ViewBag.NotFoundCoupon = "Böyle bir kupon bulunamadı";
+                    var totalPriceWithTax = values.TotalPrice + values.TotalPrice / 100 * 10;
+                    var tax = values.TotalPrice / 100 * 10;
+                    ViewBag.tax = tax;
+                    ViewBag.totalPriceWithTax = totalPriceWithTax;
                 }
                 else
                 {
                     var tax = values.TotalPrice / 100 * 10;
                     var rate = values.TotalPrice / 100 * codeControl.Rate;
                     var totalPriceWithTax = values.TotalPrice + tax - rate;
+                    ViewBag.totalPrice = ViewBag.totalPrice - rate;
                     ViewBag.tax = tax;
                     ViewBag.totalPriceWithTax = totalPriceWithTax;
                     ViewBag.CouponMessage = $"{code} kupon uygulandı";

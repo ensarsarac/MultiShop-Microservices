@@ -14,8 +14,22 @@ namespace MultiShop.WebUI.Services.DiscountServices
         public async Task<GetDiscountCodeDetailByCode> GetDiscountCode(string code)
         {
             var response = await _httpClient.GetAsync("discounts/GetCodeDetailByCode/" + code);
-            var result = await response.Content.ReadFromJsonAsync<GetDiscountCodeDetailByCode>();
-            return result;
+            if (response.IsSuccessStatusCode)
+            {
+                var result = await response.Content.ReadFromJsonAsync<GetDiscountCodeDetailByCode>();
+                return result;
+            }
+            else
+            {
+                return new GetDiscountCodeDetailByCode
+                {
+                    Code = null,
+                    IsActive = false,
+                    Rate = 0,
+                    ValidDate = DateTime.Now,
+                };
+            }
+
 
         }
     }
