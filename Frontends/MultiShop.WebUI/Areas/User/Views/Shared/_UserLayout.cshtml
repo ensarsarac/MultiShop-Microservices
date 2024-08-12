@@ -13,21 +13,11 @@
 			@await Component.InvokeAsync("_UserLayoutNavbarComponent")
 			<div class="main-panel">
 				<div class="content-wrapper">
-					<div class="row">
-
-						<div class="col-12 col-xl-6 grid-margin stretch-card">
-							<div class="row w-100 flex-grow">
-								@RenderBody()
-							</div>
-						</div>
-					</div>
-
-
+					@RenderBody()
+					@await Component.InvokeAsync("_UserLayoutFooterComponent")
 				</div>
-				@await Component.InvokeAsync("_UserLayoutFooterComponent")
 			</div>
 		</div>
-	</div>
-	@await Component.InvokeAsync("_UserLayoutScriptComponent")
+		@await Component.InvokeAsync("_UserLayoutScriptComponent")
 </body>
 </html>

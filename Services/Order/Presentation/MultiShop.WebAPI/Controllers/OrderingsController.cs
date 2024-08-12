@@ -24,7 +24,13 @@ namespace MultiShop.WebAPI.Controllers
             var values = await _mediator.Send(new GetOrderingQueryResult());
             return Ok(values);
         }
-        [HttpGet("{id}")]
+		[HttpGet("GetOrderingByUserId/{id}")]
+		public async Task<IActionResult> GetOrderingByUserId(string id)
+		{
+			var values = await _mediator.Send(new GetOrderingByUserIdQuery { UserId = id});
+			return Ok(values);
+		}
+		[HttpGet("{id}")]
         public async Task<IActionResult> OrderingById(int id)
         {
             var values = await _mediator.Send(new GetOrderingByIdQuery(id));

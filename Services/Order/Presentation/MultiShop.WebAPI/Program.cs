@@ -17,6 +17,7 @@ builder.Services.AddDbContext<OrderContext>();
 builder.Services.AddApplicationService(builder.Configuration);
 builder.Services.AddHandlersService();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped<IOrderingRepository, OrderingRepository>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
