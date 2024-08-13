@@ -71,6 +71,11 @@ namespace MultiShop.Message.Services
             return mapped;
         }
 
+        public async Task<int> TotalMessageCount()
+        {
+            return await _context.Messages.CountAsync();
+        }
+
         public async Task UpdateMessageAsync(UpdateMessageDto updateMessageDto)
         {
             throw new NotImplementedException();

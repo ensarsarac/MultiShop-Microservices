@@ -165,6 +165,8 @@ builder.Services.AddHttpClient<ICargoService, CargoService>(opt =>
     opt.BaseAddress = new Uri($"{values.OcelotUrl}/{values.CargoUrl.Path}/");
 }).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
 
+
+
 builder.Services.AddAccessTokenManagement();
 
 var app = builder.Build();
