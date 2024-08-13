@@ -36,7 +36,8 @@ namespace MultiShop.Cargo.WebAPI.Controllers
 				Email = createCargoCustomerDto.Email,
 				Name = createCargoCustomerDto.Name,
 				PhoneNumber = createCargoCustomerDto.PhoneNumber,
-				Surname = createCargoCustomerDto.Surname
+				Surname = createCargoCustomerDto.Surname,
+				UserCustomerId = createCargoCustomerDto.UserCustomerId,
 			});
 			return Ok("Kargo şirketi başarıyla oluşturuldu.");
 		}
@@ -68,5 +69,12 @@ namespace MultiShop.Cargo.WebAPI.Controllers
 			});
 			return Ok("Kargo şirketi başarıyla güncellendi.");
 		}
-	}
+
+        [HttpGet("GetByUserId/{id}")]
+        public async Task<IActionResult> GetByUserId(string id)
+        {
+            var value =await _cargoCustomerService.TGetCargoCustomerByUserId(id);
+            return Ok(value);
+        }
+    }
 }

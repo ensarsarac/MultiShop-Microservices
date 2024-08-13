@@ -1,5 +1,6 @@
 ﻿using MultiShop.Cargo.BusinessLayer.Abstract;
 using MultiShop.Cargo.DataAccessLayer.Abstract;
+using MultiShop.Cargo.DtoLayer.CargoCustomerDtos;
 using MultiShop.Cargo.EntityLayer.Entities;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,12 @@ namespace MultiShop.Cargo.BusinessLayer.Concrete
 			return _cargoCustomerDal.GetById(id);
 		}
 
-		public List<CargoCustomer> TGetList()
+        public async Task<ResultCargoCustomerByUserId> TGetCargoCustomerByUserId(string id)
+        {
+			return await _cargoCustomerDal.GetCargoCustomerByUserId(id);
+        }
+
+        public List<CargoCustomer> TGetList()
 		{
 			return _cargoCustomerDal.GetList();
 		}

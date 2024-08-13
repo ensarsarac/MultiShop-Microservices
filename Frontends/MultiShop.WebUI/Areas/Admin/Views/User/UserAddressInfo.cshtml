@@ -1,0 +1,26 @@
+﻿@model MultiShop.DtoLayer.CargoDtos.CargoCustomerDtos.GetCargoCustomerByUserId
+@{
+    ViewData["Title"] = "UserAddressInfo";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section class="content container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="chart-box">
+                <div class="bs-example" data-example-id="bordered-table">
+                    <div class="col-12 alert alert-warning">
+                        <h3>Kullanıcı Adres Bilgisi</h3>
+                        Id:@Model.UserCustomerId <br /><br />
+                        Adı Soyadı:@Model.Name @Model.Surname<br /><br />
+                        Email:@Model.Email<br /><br />
+                        Telefon:@Model.PhoneNumber<br /><br />
+                        İlçe-Şehir:@Model.District @Model.City<br /><br />
+                        Adres:@Model.Address<br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

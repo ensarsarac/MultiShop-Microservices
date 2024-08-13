@@ -1,4 +1,6 @@
 ﻿using MultiShop.DtoLayer.CargoDtos.CargoCompanyDtos;
+using MultiShop.DtoLayer.CargoDtos.CargoCustomerDtos;
+using MultiShop.WebUI.Services.Interfaces;
 using Newtonsoft.Json;
 
 namespace MultiShop.WebUI.Services.CargoServices
@@ -34,6 +36,13 @@ namespace MultiShop.WebUI.Services.CargoServices
         {
             var responseMessage = await _httpClient.GetAsync("cargocompany/" + id);
             var result = await responseMessage.Content.ReadFromJsonAsync<GetByIdCargoCompanyDto>();
+            return result;
+        }
+
+        public async Task<GetCargoCustomerByUserId> GetCargoCustomerUserId(string id)
+        {
+            var responseMessage = await _httpClient.GetAsync("cargocustomer/GetByUserId/" + id);
+            var result = await responseMessage.Content.ReadFromJsonAsync<GetCargoCustomerByUserId>();
             return result;
         }
 

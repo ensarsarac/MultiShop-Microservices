@@ -1,4 +1,5 @@
 ﻿using MultiShop.DtoLayer.CargoDtos.CargoCompanyDtos;
+using MultiShop.DtoLayer.CargoDtos.CargoCustomerDtos;
 
 namespace MultiShop.WebUI.Services.CargoServices
 {
@@ -9,5 +10,7 @@ namespace MultiShop.WebUI.Services.CargoServices
         Task UpdateCargoCompanyAsync(UpdateCargoCompanyDto updateCargoCompanyDto);
         Task DeleteCargoCompanyAsync(int id);
         Task<GetByIdCargoCompanyDto> GetByIdCargoCompanyAsync(int id);
+
+        Task<GetCargoCustomerByUserId> GetCargoCustomerUserId(string id);
     }
 }

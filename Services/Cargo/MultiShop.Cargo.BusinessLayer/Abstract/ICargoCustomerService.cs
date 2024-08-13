@@ -1,4 +1,5 @@
-﻿using MultiShop.Cargo.EntityLayer.Entities;
+﻿using MultiShop.Cargo.DtoLayer.CargoCustomerDtos;
+using MultiShop.Cargo.EntityLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace MultiShop.Cargo.BusinessLayer.Abstract
 {
 	public interface ICargoCustomerService:IGenericService<CargoCustomer>
 	{
-	}
+        Task<ResultCargoCustomerByUserId> TGetCargoCustomerByUserId(string id);
+    }
 }

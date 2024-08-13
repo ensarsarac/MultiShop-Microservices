@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MultiShop.Cargo.EntityLayer.Entities
+namespace MultiShop.DtoLayer.CargoDtos.CargoCustomerDtos
 {
-	public class CargoCustomer
-	{
+    public class GetCargoCustomerByUserId
+    {
         public int CargoCustomerId { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
