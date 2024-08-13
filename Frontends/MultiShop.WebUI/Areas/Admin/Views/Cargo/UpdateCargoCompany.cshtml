@@ -1,0 +1,29 @@
+﻿@model MultiShop.DtoLayer.CargoDtos.CargoCompanyDtos.GetByIdCargoCompanyDto
+@{
+    ViewData["Title"] = "UpdateCargoCompany";
+    ViewData["MenuTitle"] = "Kargo Şirketleri İşlemleri";
+    ViewData["v1"] = "Ana Sayfa";
+    ViewData["v2"] = "Kargo Şirketi";
+    ViewData["v3"] = "Kargo Şirketi Güncelle";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="chart-box">
+            <h4>Kargo Şirketi Güncelle</h4>
+            <p>Kargo Şirketi ile ilgili güncelleme işlemini panel üzerinden gerçekleştirebilirsiniz.</p>
+            <hr />
+            <div class="bs-example" data-example-id="bordered-table">
+                <form method="post">
+                    <input type="hidden" asp-for="@Model.CargoCompanyId" />
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Kargo Şirketi Adı</label>
+                        <input type="text" asp-for="@Model.CargoCompanyName" class="form-control" id="exampleInputEmail1" placeholder="Kargo Şirketi Adı">
+                    </div>
+                    <button type="submit" class="btn btn-default">Kaydet</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
