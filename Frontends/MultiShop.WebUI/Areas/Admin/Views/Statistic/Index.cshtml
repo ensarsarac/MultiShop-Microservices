@@ -4,5 +4,124 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>Index</h1>
 
+    <section class="content container-fluid">
+        <h3>İstatistikler</h3>
+
+        <div class="row">
+            <div class="col-lg-3 col-xs-6">
+                <div class="media-box">
+                    <div class="media-icon pull-left"><i class="icon-bargraph"></i> </div>
+                    <div class="media-info">
+                        <h5>Toplam Marka</h5>
+                        <h3>@ViewBag.brandCount</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <div class="media-box bg-sea">
+                    <div class="media-icon pull-left"><i class="icon-wallet"></i> </div>
+                    <div class="media-info">
+                        <h5>Toplam Kategori</h5>
+                        <h3>@ViewBag.categoryCount</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <div class="media-box bg-blue">
+                    <div class="media-icon pull-left"><i class="icon-basket"></i> </div>
+                    <div class="media-info">
+                        <h5>Toplam Ürün</h5>
+                        <h3>@ViewBag.productCount</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <div class="media-box bg-green">
+                    <div class="media-icon pull-left"><i class="icon-layers"></i> </div>
+                    <div class="media-info">
+                        <h5>En Pahalı Ürün</h5>
+                    <h3>@ViewBag.productMaxPriceProductName</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="row">
+        <div class="col-lg-3 col-xs-6">
+            <div class="media-box">
+                <div class="media-icon pull-left"><i class="icon-bargraph"></i> </div>
+                <div class="media-info">
+                    <h5>En Ucuz Ürün</h5>
+                    <h3>@ViewBag.productMinPriceProductName</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+            <div class="media-box bg-sea">
+                <div class="media-icon pull-left"><i class="icon-wallet"></i> </div>
+                <div class="media-info">
+                    <h5>Ortalama Ürün Fiyatı</h5>
+                    <h3>10200.00</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+            <div class="media-box bg-blue">
+                <div class="media-icon pull-left"><i class="icon-basket"></i> </div>
+                <div class="media-info">
+                    <h5>Toplam Kullanıcı</h5>
+                    <h3>@ViewBag.userCount</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+            <div class="media-box bg-green">
+                <div class="media-icon pull-left"><i class="icon-layers"></i> </div>
+                <div class="media-info">
+                    <h5>Toplam Yorumlar</h5>
+                    <h3>@ViewBag.totalComment</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-xs-6">
+            <div class="media-box">
+                <div class="media-icon pull-left"><i class="icon-bargraph"></i> </div>
+                <div class="media-info">
+                    <h5>Aktif Yorumlar</h5>
+                    <h3>@ViewBag.activeComment</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+            <div class="media-box bg-sea">
+                <div class="media-icon pull-left"><i class="icon-wallet"></i> </div>
+                <div class="media-info">
+                    <h5>Pasif Yorumlar</h5>
+                    <h3>@ViewBag.passiveComment</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+            <div class="media-box bg-blue">
+                <div class="media-icon pull-left"><i class="icon-basket"></i> </div>
+                <div class="media-info">
+                    <h5>Toplam Kuponlar</h5>
+                    <h3>@ViewBag.couponCount</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+            <div class="media-box bg-green">
+                <div class="media-icon pull-left"><i class="icon-layers"></i> </div>
+                <div class="media-info">
+                    <h5>Toplam Mesajlar</h5>
+                    <h3>@ViewBag.messageCount</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+</section>

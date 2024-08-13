@@ -22,6 +22,11 @@ using MultiShop.WebUI.Services.MessageServices;
 using MultiShop.WebUI.Services.OrderServices;
 using MultiShop.WebUI.Services.OrderServices.AddressServices;
 using MultiShop.WebUI.Services.OrderServices.OrderingServices;
+using MultiShop.WebUI.Services.StatisticServices.CatalogStatisticServices;
+using MultiShop.WebUI.Services.StatisticServices.CommentStatisticServices;
+using MultiShop.WebUI.Services.StatisticServices.CouponStatisticServices;
+using MultiShop.WebUI.Services.StatisticServices.MessageStatisticService;
+using MultiShop.WebUI.Services.StatisticServices.UserStatisticServices;
 using MultiShop.WebUI.Services.UserIdentityServices;
 using MultiShop.WebUI.Settings;
 
@@ -165,6 +170,35 @@ builder.Services.AddHttpClient<ICargoService, CargoService>(opt =>
     opt.BaseAddress = new Uri($"{values.OcelotUrl}/{values.CargoUrl.Path}/");
 }).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
 
+builder.Services.AddHttpClient<ICargoService, CargoService>(opt =>
+{
+    opt.BaseAddress = new Uri($"{values.OcelotUrl}/{values.CargoUrl.Path}/");
+}).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
+
+builder.Services.AddHttpClient<ICatalogStatisticService, CatalogStatisticService>(opt =>
+{
+    opt.BaseAddress = new Uri($"{values.OcelotUrl}/{values.CatalogUrl.Path}/");
+}).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
+
+builder.Services.AddHttpClient<IUserStatisticService, UserStatisticService>(opt =>
+{
+    opt.BaseAddress = new Uri(values.IdentityServerUrl);
+}).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
+
+builder.Services.AddHttpClient<ICommentStatisticService, CommentStatisticService>(opt =>
+{
+    opt.BaseAddress = new Uri($"{values.OcelotUrl}/{values.CommentUrl.Path}/");
+}).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
+
+builder.Services.AddHttpClient<ICouponStatisticService, CouponStatisticService>(opt =>
+{
+    opt.BaseAddress = new Uri($"{values.OcelotUrl}/{values.DiscountUrl.Path}/");
+}).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
+
+builder.Services.AddHttpClient<IMessageStatisticService, MessageStatisticService>(opt =>
+{
+    opt.BaseAddress = new Uri($"{values.OcelotUrl}/{values.MessageUrl.Path}/");
+}).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
 
 
 builder.Services.AddAccessTokenManagement();

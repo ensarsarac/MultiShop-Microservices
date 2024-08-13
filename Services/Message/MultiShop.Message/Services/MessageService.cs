@@ -73,7 +73,7 @@ namespace MultiShop.Message.Services
 
         public async Task<int> TotalMessageCount()
         {
-            return await _context.Messages.CountAsync();
+            return _context.Messages.Count();
         }
 
         public async Task UpdateMessageAsync(UpdateMessageDto updateMessageDto)
