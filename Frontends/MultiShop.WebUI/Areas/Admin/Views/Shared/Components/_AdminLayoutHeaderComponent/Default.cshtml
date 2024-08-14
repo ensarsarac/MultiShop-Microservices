@@ -1,4 +1,5 @@
-﻿<header class="main-header dark-bg">
+﻿
+<header class="main-header dark-bg">
     <a href="index.html" class="logo dark-bg">
         <span class="logo-mini"><img src="~/images/logos/MULTISHOPPNG.png" style="width:200px; height:40px;" alt="Ovio"></span>
         <span class="logo-lg"><img src="~/images/logos/MULTISHOPPNG.png" style="width:200px; height:40px;" alt="Ovio"></span>
@@ -23,7 +24,7 @@
                 <li class="dropdown messages-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="icon-envelope"></i>
-                        <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+                        <div class="notify"> <span class="badge badge-danger">@ViewBag.messageCount</span> </div>
                     </a>
                     <ul class="dropdown-menu">
                         <li class="header">You have 4 messages</li>
@@ -32,8 +33,7 @@
                                 <li>
                                     <a href="#">
                                         <div class="pull-left"><img src="dist/img/img1.jpg" class="img-circle" alt="User Image"></div>
-                                        <h4>Florence Douglas</h4>
-                                        <p>Lorem ipsum dolor sit amet.</p>
+                                        <h4>Ensar SARAÇ</h4>
                                         <p><small><i class="fa fa-clock-o"></i> 2 mins</small></p>
                                     </a>
                                 </li>
@@ -71,10 +71,10 @@
                 <li class="dropdown notifications-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="icon-megaphone"></i>
-                        <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+                        <div class="notify"> <span class="badge">@ViewBag.commentCount</span></div>
                     </a>
                     <ul class="dropdown-menu">
-                        <li class="header">Notifications</li>
+                        <li class="header">Son Yorumlar</li>
                         <li>
                             <ul class="menu">
                                 <li><a href="#"><i class="icon-lightbulb"></i> Lorem ipsum dolor sit amet </a> </li>
@@ -109,3 +109,14 @@
         </div>
     </nav>
 </header>
+
+
+<style>
+
+    .notify {
+        position: relative;
+        right: -8px;
+        top: -30px;
+    }
+
+</style>

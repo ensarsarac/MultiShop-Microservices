@@ -71,6 +71,13 @@ namespace MultiShop.Message.Services
             return mapped;
         }
 
+        public async Task<int> TotalMessageByReceiverId(string id)
+        {
+            var values = await _context.Messages.Where(x => x.ReceiveId == id).CountAsync();
+
+            return values;
+        }
+
         public async Task<int> TotalMessageCount()
         {
             return _context.Messages.Count();

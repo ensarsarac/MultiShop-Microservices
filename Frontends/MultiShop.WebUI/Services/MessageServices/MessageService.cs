@@ -44,5 +44,12 @@ namespace MultiShop.WebUI.Services.MessageServices
             var result = JsonConvert.DeserializeObject<List<ResultSendboxMessageDto>>(readData);
             return result;
         }
+
+        public async Task<int> TotalMessageByReceiverId(string id)
+        {
+            var responseMessage = await _httpClient.GetAsync("messages/GetMessageByReceiverId/" + id);
+            var readData = await responseMessage.Content.ReadFromJsonAsync<int>();
+            return readData;
+        }
     }
 }

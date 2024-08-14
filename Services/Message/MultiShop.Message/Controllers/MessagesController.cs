@@ -70,5 +70,12 @@ namespace MultiShop.Message.Controllers
 
             return Ok(values);
         }
+        [HttpGet("GetMessageByReceiverId/{id}")]
+        public async Task<IActionResult> GetMessageByReceiverId(string id)
+        {
+            var values = await _messageService.TotalMessageByReceiverId(id);
+
+            return Ok(values);
+        }
     }
 }
