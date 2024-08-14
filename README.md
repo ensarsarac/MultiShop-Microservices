@@ -95,22 +95,22 @@
 
 <h3>UI Paneli</h3>
 <img src="https://github.com/user-attachments/assets/90e075d1-2ab6-4909-b776-b24e466a0568" />
-![resim2](https://github.com/user-attachments/assets/55fcc08f-25ed-4e43-adde-3521dd7b17f3)
-![resim3](https://github.com/user-attachments/assets/26f07ea5-f6b4-4ffa-a90c-d8f20f4e2c94)
-![resim4](https://github.com/user-attachments/assets/fc0488a8-27e2-45ea-ab00-2b30cf4b56e4)
-![resim5](https://github.com/user-attachments/assets/636cc892-de2c-4635-bff6-7876a1bf31c3)
-![resim6](https://github.com/user-attachments/assets/79556972-ef6b-4070-88a2-77742ea3f45c)
-![resim7](https://github.com/user-attachments/assets/bef94d10-d404-43ce-bbee-6fe4d198a1e5)
-![resim8](https://github.com/user-attachments/assets/913a3326-c626-43da-8124-e8eb59c6df51)
-![resim9](https://github.com/user-attachments/assets/5b9ba165-9be4-44ae-8e79-5873951eed9d)
+<img src="https://github.com/user-attachments/assets/55fcc08f-25ed-4e43-adde-3521dd7b17f3" />
+<img src="https://github.com/user-attachments/assets/26f07ea5-f6b4-4ffa-a90c-d8f20f4e2c94" />
+<img src="https://github.com/user-attachments/assets/fc0488a8-27e2-45ea-ab00-2b30cf4b56e4" />
+<img src="https://github.com/user-attachments/assets/636cc892-de2c-4635-bff6-7876a1bf31c3" />
+<img src="https://github.com/user-attachments/assets/79556972-ef6b-4070-88a2-77742ea3f45c" />
+<img src="https://github.com/user-attachments/assets/bef94d10-d404-43ce-bbee-6fe4d198a1e5" />
+<img src="https://github.com/user-attachments/assets/913a3326-c626-43da-8124-e8eb59c6df51" />
+<img src="https://github.com/user-attachments/assets/5b9ba165-9be4-44ae-8e79-5873951eed9d" />
 
 <h3>Admin Paneli</h3>
-![resim11](https://github.com/user-attachments/assets/8b856552-c8ee-4d23-862f-c933e9f615a6)
-![resim12](https://github.com/user-attachments/assets/5f48c597-724b-40e4-b3e9-61db22de192d)
-![resim13](https://github.com/user-attachments/assets/57be0271-6685-477a-9a09-21646cb32b96)
+<img src="https://github.com/user-attachments/assets/8b856552-c8ee-4d23-862f-c933e9f615a6" />
+<img src="https://github.com/user-attachments/assets/5f48c597-724b-40e4-b3e9-61db22de192d" />
+<img src="https://github.com/user-attachments/assets/57be0271-6685-477a-9a09-21646cb32b96" />
 
 <h3>Kullanıcı Paneli</h3>
-![resim14](https://github.com/user-attachments/assets/c2169b00-c435-4a6c-99f7-7e72393be921)
+<img src="https://github.com/user-attachments/assets/c2169b00-c435-4a6c-99f7-7e72393be921" />
 
 
 
