@@ -88,7 +88,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiShop.Message", "Servic
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SignalR", "SignalR", "{3E6B6C5F-B4FA-47B3-A875-90558FE3BCF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiShop.SignalR", "Services\SignalR\MultiShop.SignalR\MultiShop.SignalR.csproj", "{92C38ACE-2B52-40AD-B3BD-75D802280139}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiShop.SignalR", "Services\SignalR\MultiShop.SignalR\MultiShop.SignalR.csproj", "{92C38ACE-2B52-40AD-B3BD-75D802280139}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiShop.Images.WebApp", "Services\mages\MultiShop.Images.WebApp\MultiShop.Images.WebApp.csproj", "{E47C5A88-4E24-4769-9D3F-17BAFED830FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -180,6 +182,10 @@ Global
 		{92C38ACE-2B52-40AD-B3BD-75D802280139}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92C38ACE-2B52-40AD-B3BD-75D802280139}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92C38ACE-2B52-40AD-B3BD-75D802280139}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E47C5A88-4E24-4769-9D3F-17BAFED830FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E47C5A88-4E24-4769-9D3F-17BAFED830FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E47C5A88-4E24-4769-9D3F-17BAFED830FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E47C5A88-4E24-4769-9D3F-17BAFED830FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -219,6 +225,7 @@ Global
 		{381ECEBD-510D-40E7-8F82-27DB75B8FDF4} = {A42D83A8-7D9A-4478-B75E-EDDA0731F640}
 		{3E6B6C5F-B4FA-47B3-A875-90558FE3BCF9} = {28A6065A-7EC0-472F-BAD2-27CC358ACFA7}
 		{92C38ACE-2B52-40AD-B3BD-75D802280139} = {3E6B6C5F-B4FA-47B3-A875-90558FE3BCF9}
+		{E47C5A88-4E24-4769-9D3F-17BAFED830FE} = {23ECB3B0-1F40-453C-BF7C-5DAF2345236E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {82E19A7F-4FFD-4D7C-916B-E595AD7783E3}
