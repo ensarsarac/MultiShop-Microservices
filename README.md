@@ -94,7 +94,7 @@
 </ul>
 
 <h3>UI Paneli</h3>
-![resim1](https://github.com/user-attachments/assets/90e075d1-2ab6-4909-b776-b24e466a0568)
+<img src="https://github.com/user-attachments/assets/90e075d1-2ab6-4909-b776-b24e466a0568" />
 ![resim2](https://github.com/user-attachments/assets/55fcc08f-25ed-4e43-adde-3521dd7b17f3)
 ![resim3](https://github.com/user-attachments/assets/26f07ea5-f6b4-4ffa-a90c-d8f20f4e2c94)
 ![resim4](https://github.com/user-attachments/assets/fc0488a8-27e2-45ea-ab00-2b30cf4b56e4)
