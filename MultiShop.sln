@@ -90,7 +90,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SignalR", "SignalR", "{3E6B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiShop.SignalR", "Services\SignalR\MultiShop.SignalR\MultiShop.SignalR.csproj", "{92C38ACE-2B52-40AD-B3BD-75D802280139}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiShop.Images.WebApp", "Services\mages\MultiShop.Images.WebApp\MultiShop.Images.WebApp.csproj", "{E47C5A88-4E24-4769-9D3F-17BAFED830FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiShop.Images.WebApp", "Services\mages\MultiShop.Images.WebApp\MultiShop.Images.WebApp.csproj", "{E47C5A88-4E24-4769-9D3F-17BAFED830FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RabbitMQMessage", "RabbitMQMessage", "{5353F2F4-0BD7-45D4-ABFE-4187A0D7F477}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiShop.RabbitMQMessageApi", "Services\RabbitMQMessage\MultiShop.RabbitMQMessageApi\MultiShop.RabbitMQMessageApi.csproj", "{D7D010D1-51FC-4BF5-9537-BB2A8399CA50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiShop.RapidApi", "Services\RapidApi\MultiShop.RapidApi\MultiShop.RapidApi.csproj", "{89015901-A98F-41AE-998D-E7D9C1BA557E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -186,6 +192,14 @@ Global
 		{E47C5A88-4E24-4769-9D3F-17BAFED830FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E47C5A88-4E24-4769-9D3F-17BAFED830FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E47C5A88-4E24-4769-9D3F-17BAFED830FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7D010D1-51FC-4BF5-9537-BB2A8399CA50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7D010D1-51FC-4BF5-9537-BB2A8399CA50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7D010D1-51FC-4BF5-9537-BB2A8399CA50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7D010D1-51FC-4BF5-9537-BB2A8399CA50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89015901-A98F-41AE-998D-E7D9C1BA557E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89015901-A98F-41AE-998D-E7D9C1BA557E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89015901-A98F-41AE-998D-E7D9C1BA557E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89015901-A98F-41AE-998D-E7D9C1BA557E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -226,6 +240,9 @@ Global
 		{3E6B6C5F-B4FA-47B3-A875-90558FE3BCF9} = {28A6065A-7EC0-472F-BAD2-27CC358ACFA7}
 		{92C38ACE-2B52-40AD-B3BD-75D802280139} = {3E6B6C5F-B4FA-47B3-A875-90558FE3BCF9}
 		{E47C5A88-4E24-4769-9D3F-17BAFED830FE} = {23ECB3B0-1F40-453C-BF7C-5DAF2345236E}
+		{5353F2F4-0BD7-45D4-ABFE-4187A0D7F477} = {28A6065A-7EC0-472F-BAD2-27CC358ACFA7}
+		{D7D010D1-51FC-4BF5-9537-BB2A8399CA50} = {5353F2F4-0BD7-45D4-ABFE-4187A0D7F477}
+		{89015901-A98F-41AE-998D-E7D9C1BA557E} = {69D7FAB0-DA6F-4E36-8F7B-606C798C798B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {82E19A7F-4FFD-4D7C-916B-E595AD7783E3}
