@@ -1,0 +1,35 @@
+﻿@model MultiShop.RapidApi.Models.ProductViewModel
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+
+<div class="container">
+    <br /><br />
+    <h3>Ürünler</h3>
+    <hr />
+    <table class="table table-striped">
+        <tr>
+            <th>#</th>
+            <th>Ürün Görseli</th>
+            <th>Ürün Adı</th>
+            <th>Ürün Açıklama</th>
+            <th>Ürün Puanı</th>
+            <th>Ürün Fiyatı</th>
+        </tr>
+        @foreach (var item in Model.data)
+        {
+            <tr>
+                <td>@item.product_id</td>
+                <td><img src="@item.product_photos[0]" style="width:75px;height:75px;" /></td>
+                <td>@item.product_title</td>
+                <td>@item.product_description.Substring(0,100) ...</td>
+                <td>@item.product_rating</td>
+                <td>@item.offer.price</td>
+            </tr>
+        }
+    </table>
+</div>
+
