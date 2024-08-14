@@ -13,7 +13,7 @@
 
         public async Task<int> TotalMessageByReceiverId(string id)
         {
-            var responseMessage = await _httpClient.GetAsync("messages/GetMessageByReceiverId/" + id);
+            var responseMessage = await _httpClient.GetAsync("http://localhost:7258/api/MessasgeStatistic");
             var readData = await responseMessage.Content.ReadFromJsonAsync<int>();
             return readData;
         }

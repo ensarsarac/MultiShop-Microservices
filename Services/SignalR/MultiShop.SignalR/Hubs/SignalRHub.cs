@@ -19,10 +19,9 @@ namespace MultiShop.SignalR.Hubs
         {
             var getTotalCommentCount = await _signalRCommentService.TotalCommentCount();
 
-            var getTotalMessageCount =  await _signalRService.TotalMessageByReceiverId("1");
 
             await Clients.All.SendAsync("ReceiverCommentCount", getTotalCommentCount);
-            await Clients.All.SendAsync("ReceiverMessageCount", getTotalMessageCount);
+
         }
     }
 }

@@ -23,55 +23,23 @@
             <ul class="nav navbar-nav">
                 <li class="dropdown messages-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="icon-envelope"></i>
-                        <div class="notify"> <span class="badge badge-danger">@ViewBag.messageCount</span> </div>
+                        <i class="icon-envelope"> @ViewBag.messageCount</i>
+                        <div class="notify"> <span class="heartbit"></span><span class="point"></span> </div>
                     </a>
                     <ul class="dropdown-menu">
-                        <li class="header">You have 4 messages</li>
+                        <li class="header">Henüz mesajınız yok</li>
                         <li>
                             <ul class="menu">
-                                <li>
-                                    <a href="#">
-                                        <div class="pull-left"><img src="dist/img/img1.jpg" class="img-circle" alt="User Image"></div>
-                                        <h4>Ensar SARAÇ</h4>
-                                        <p><small><i class="fa fa-clock-o"></i> 2 mins</small></p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="pull-left"><img src="dist/img/img2.jpg" class="img-circle" alt="User Image"></div>
-                                        <h4>Douglas Smith</h4>
-                                        <p>Lorem ipsum dolor sit amet.</p>
-                                        <p><small><i class="fa fa-clock-o"></i> 15 mins</small></p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="pull-left"><img src="dist/img/img3.jpg" class="img-circle" alt="User Image"></div>
-                                        <h4>Lorence Deo</h4>
-                                        <p>Lorem ipsum dolor sit amet.</p>
-                                        <p><small><i class="fa fa-clock-o"></i> 35 mins</small></p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="pull-left"><img src="dist/img/img1.jpg" class="img-circle" alt="User Image"></div>
-                                        <h4>Florence Douglas</h4>
-                                        <p>Lorem ipsum dolor sit amet.</p>
-                                        <p><small><i class="fa fa-clock-o"></i> 2 mins</small></p>
-                                    </a>
-                                </li>
+                               
                             </ul>
                         </li>
-                        <li class="footer"><a href="#">Check all notifications</a></li>
+                        <li class="footer"><a href="#">Tüm Mesajlar</a></li>
                     </ul>
                 </li>
-                <!-- messages-menu -->
-                <!-- Notifications Menu -->
                 <li class="dropdown notifications-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="icon-megaphone"></i>
-                        <div class="notify"> <span class="badge">@ViewBag.commentCount</span></div>
+                        <i class="icon-megaphone"> @ViewBag.commentCount</i>
+                        <div class="notify"> <span class="heartbit"></span><span class="point"></span></div>
                     </a>
                     <ul class="dropdown-menu">
                         <li class="header">Son Yorumlar</li>
@@ -89,11 +57,11 @@
                 <!-- Tasks Menu -->
                 <!-- User Account Menu -->
                 <li class="dropdown user user-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="dist/img/img1.jpg" class="user-image" alt="User Image"> <span class="hidden-xs">Florence Douglas</span> </a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">  <span class="hidden-xs">Ensar SARAÇ</span> </a>
                     <ul class="dropdown-menu">
                         <li class="user-header">
                             <div class="pull-left user-img"><img src="dist/img/img1.jpg" class="img-responsive" alt="User"></div>
-                            <p class="text-left">Florence Douglas <small>florence@gmail.com</small> </p>
+                            <p class="text-left">Ensar SARAÇ<small>ensar.src94@gmail.com</small> </p>
                             <div class="view-link text-left"><a href="#">View Profile</a> </div>
                         </li>
                         <li><a href="#"><i class="icon-profile-male"></i> My Profile</a></li>
@@ -110,13 +78,3 @@
     </nav>
 </header>
 
-
-<style>
-
-    .notify {
-        position: relative;
-        right: -8px;
-        top: -30px;
-    }
-
-</style>
